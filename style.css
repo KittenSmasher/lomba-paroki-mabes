@@ -1,7 +1,7 @@
 /* ===== Tokens ===== */
 :root {
-    --night: #1b1436;      /* dusk sky, top of hero */
-    --wine: #6b1a2b;       /* stained-glass red */
+    --night: #1b1436;      
+    --wine: #6b1a2b;      
     --wine-deep: #43101b;
     --gold: #c9a24a;
     --gold-soft: #ecd9a4;
@@ -12,7 +12,7 @@
 
     --font-title: "Cinzel Decorative", "Cormorant Garamond", Georgia, serif;
     --font-head: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-    --font-body: "Source Sans 3", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --font-body: "Manrope", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
