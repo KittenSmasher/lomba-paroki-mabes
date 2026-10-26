@@ -1,4 +1,4 @@
-/* ===== Tokens ===== */
+
 :root {
     --night: #1b1436;      
     --wine: #6b1a2b;      
@@ -47,7 +47,7 @@ body {
     z-index: 2;
     max-width: 720px;
     margin: 0 auto;
-    padding-bottom: 96px; /* room for the photo to overlap */
+    padding-bottom: 96px; 
     animation: rise 1.1s ease-out both;
 }
 
@@ -125,11 +125,11 @@ body {
 .church-banner img {
     display: block;
     width: 100%;
-    height: auto;                   /* keeps the JPG's own wide shape */
+    height: auto;                   
     min-height: 180px;
     max-height: 480px;
-    object-fit: cover;              /* only crops extreme shapes */
-    background: #ebe4d4;            /* placeholder tone until the JPG is added */
+    object-fit: cover;              
+    background: #ebe4d4;           
     color: var(--muted);
     font-style: italic;
 }
@@ -318,7 +318,7 @@ li ol { margin-top: 6px; list-style: lower-alpha; }
 .prize.first .rank { color: var(--gold-soft); }
 .prize.first .amount { color: #fff; font-size: 1.9rem; }
 
-/* ===== PIC (compact) ===== */
+/* ===== PIC ===== */
 .card.pic { padding: 18px 22px 20px; }
 .card.pic h2 {
     font-size: 1.35rem;
@@ -375,6 +375,95 @@ li ol { margin-top: 6px; list-style: lower-alpha; }
     font-weight: 600;
     color: var(--wine);
     white-space: nowrap;
+}
+
+/* ===== FAQ section ===== */
+/* Accordion Wrapper */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Individual FAQ Item */
+.faq-item {
+    border: 1px solid var(--paper);
+    border-radius: 4px;
+    background-color: var(--card);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Active open state outline */
+.faq-item[open] {
+    border-color: var(--gold);
+    box-shadow: 0 4px 15px rgba(107, 26, 43, 0.04);
+}
+
+/* The Question (Header) */
+.faq-question {
+    padding: 18px 24px;
+    font-family: var(--font-head);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card);
+    user-select: none;
+    transition: all 0.25s ease;
+}
+
+/* Removes Safari's default marker arrow */
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question:hover {
+    background-color: var(--paper);
+    color: var(--wine);
+}
+
+/* Elegant custom indicator arrow using your palette */
+.faq-question::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid var(--muted);
+    border-bottom: 2px solid var(--muted);
+    transform: rotate(45deg);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+    margin-left: 16px;
+    flex-shrink: 0;
+}
+
+/* States when item is open */
+.faq-item[open] .faq-question {
+    background-color: var(--wine-deep);
+    color: var(--gold-soft);
+    border-bottom: 1px solid var(--gold);
+}
+
+.faq-item[open] .faq-question::after {
+    transform: rotate(-135deg);
+    border-color: var(--gold);
+}
+
+/* The Answer (Content Panel) */
+.faq-answer {
+    padding: 20px 24px;
+    background-color: var(--card);
+    line-height: 1.7;
+    color: var(--ink);
+    font-size: 0.95rem;
+}
+
+.faq-answer p {
+    margin: 0;
 }
 
 /* ===== Sticky button ===== */
